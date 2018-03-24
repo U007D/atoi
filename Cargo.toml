@@ -1,7 +1,7 @@
 [package]
+authors = ["Brad Gibson <b2b@humanenginuity.com>"]
 name = "atoi"
 version = "0.1.0"
-authors = ["Brad Gibson <b2b@humanenginuity.com>"]
 
 [dependencies]
 
@@ -13,4 +13,3 @@ lto = true
 opt-level = 3
 panic = "unwind"
 rpath = false
-

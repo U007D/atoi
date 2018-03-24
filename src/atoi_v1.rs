@@ -1,4 +1,5 @@
-pub fn safe_atoi(s: &str) -> u64 {
+#[allow(dead_code)]
+pub fn atoi_v1(s: &str) -> u64 {
     let pow10: [u64; 20] = [
         10000000000000000000,
         1000000000000000000,
@@ -31,16 +32,16 @@ pub fn safe_atoi(s: &str) -> u64 {
     unsafe {
         while len >= 4 {
             let d1 = (b.get_unchecked(idx) - b'0') as u64;
-            let mut r1 = d1 * pow10.get_unchecked(i);
+            let r1 = d1 * pow10.get_unchecked(i);
 
             let d2 = (b.get_unchecked(idx + 1) - b'0') as u64;
-            let mut r2 = d2 * pow10.get_unchecked(i + 1);
+            let r2 = d2 * pow10.get_unchecked(i + 1);
 
             let d3 = (b.get_unchecked(idx + 2) - b'0') as u64;
-            let mut r3 = d3 * pow10.get_unchecked(i + 2);
+            let r3 = d3 * pow10.get_unchecked(i + 2);
 
             let d4 = (b.get_unchecked(idx + 3) - b'0') as u64;
-            let mut r4 = d4 * pow10.get_unchecked(i + 3);
+            let r4 = d4 * pow10.get_unchecked(i + 3);
 
             i += 4;
             idx += 4;
